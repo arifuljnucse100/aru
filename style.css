@@ -1,0 +1,188 @@
+/* ======= GLOBAL ======= */
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  margin: 0;
+  padding: 0;
+}
+
+/* ======= LOGIN & SIGNUP ======= */
+.login-container {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 90%;
+  max-width: 400px;
+  margin: 100px auto;
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* ======= DASHBOARD ======= */
+.dashboard {
+  padding: 20px;
+  background: #f0f2f5;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.user-info h2 {
+  margin: 0;
+}
+
+.clock {
+  font-size: 2rem;
+  font-family: monospace;
+  color: #333;
+}
+
+.dashboard-widgets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.widget {
+  background: white;
+  padding: 20px;
+  flex: 1 1 300px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.placeholder {
+  text-align: center;
+  color: #777;
+}
+
+/* ======= TASK MANAGER ======= */
+#taskManager form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+#taskManager input,
+#taskManager select,
+#taskManager button {
+  flex: 1 1 150px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#taskList {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.task-item {
+  background: #fefefe;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.task-item .controls {
+  margin-top: 5px;
+}
+
+.task-item button {
+  margin-right: 5px;
+}
+
+/* ======= CHARTS ======= */
+#taskChart,
+#progressChart,
+#categoryChart {
+  max-width: 100%;
+}
+
+/* ======= STATUS ======= */
+#userStatus {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* ======= MODAL ======= */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+}
+
+/* ======= FILTER CONTROLS ======= */
+#filterControls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+#filterControls select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}

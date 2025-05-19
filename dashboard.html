@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard - Daily Tracker</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="dashboard">
+    <header>
+      <div class="user-info">
+        <h2>Welcome, <span id="userName"></span> 👋</h2>
+        <p>Your personal task dashboard</p>
+      </div>
+      <div class="clock" id="digitalClock"></div>
+    </header>
+
+    <main>
+      <section class="dashboard-widgets">
+
+        <!-- 🔍 Filters -->
+        <div class="widget">
+          <h3>🔍 Filter Tasks</h3>
+          <div id="filterControls">
+            <select id="filterPriority">
+              <option value="">All Priority</option>
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+            <select id="filterCategory">
+              <option value="">All Categories</option>
+              <option value="Work">Work</option>
+              <option value="Personal">Personal</option>
+              <option value="Study">Study</option>
+              <option value="Other">Other</option>
+            </select>
+            <select id="filterStatus">
+              <option value="">All Status</option>
+              <option value="completed">Completed</option>
+              <option value="pending">Pending</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 📝 Task Manager -->
+        <div class="widget" id="taskManager">
+          <h3>📝 Task Manager</h3>
+          <form id="taskForm">
+            <input type="text" id="taskTitle" placeholder="Enter task name..." required />
+            <select id="taskPriority">
+              <option value="high">High Priority</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low Priority</option>
+            </select>
+            <select id="taskCategory" required>
+              <option value="Work">Work</option>
+              <option value="Personal">Personal</option>
+              <option value="Study">Study</option>
+              <option value="Other">Other</option>
+            </select>
+            <input type="date" id="taskDate" required />
+            <input type="time" id="taskTime" required />
+            <button type="submit">Add Task</button>
+          </form>
+          <ul id="taskList"></ul>
+        </div>
+
+        <!-- 📊 Task Summary -->
+        <div class="widget">
+          <h3>📊 Task Summary</h3>
+          <canvas id="taskChart" width="200" height="200"></canvas>
+        </div>
+
+        <!-- 📅 Daily Progress -->
+        <div class="widget">
+          <h3>📅 Daily Progress</h3>
+          <canvas id="progressChart" height="200"></canvas>
+        </div>
+
+        <!-- 📊 Category Chart -->
+        <div class="widget">
+          <h3>📊 Task by Category</h3>
+          <canvas id="categoryChart" height="200"></canvas>
+        </div>
+
+        <!-- 🧠 Status -->
+        <div class="widget" id="statusWidget">
+          <h3>🧠 Your Status Today</h3>
+          <p id="userStatus">Calculating...</p>
+        </div>
+
+        <!-- 🗓️ Upcoming -->
+        <div class="widget">
+          <h3>🗓️ Upcoming Tasks</h3>
+          <ul id="upcomingTasksList"></ul>
+        </div>
+
+        <!-- 📋 Daily Report -->
+        <div class="widget">
+          <h3>📋 Daily Report</h3>
+          <div id="dailyReport"></div>
+        </div>
+
+        <!-- ✏️ Edit Modal -->
+        <div id="editModal" class="modal">
+          <div class="modal-content">
+            <h3>Edit Task</h3>
+            <form id="editTaskForm">
+              <input type="text" id="editTitle" required />
+              <select id="editPriority">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+              </select>
+              <input type="date" id="editDate" required />
+              <button type="submit">Save Changes</button>
+              <button type="button" onclick="closeEditModal()">Cancel</button>
+            </form>
+          </div>
+        </div>
+
+      </section>
+    </main>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
